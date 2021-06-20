@@ -39,6 +39,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -51,7 +52,6 @@ export default {
   background: rgb(249, 250, 251);
   box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
 }
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
