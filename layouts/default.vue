@@ -2,13 +2,18 @@
   <div class="fullscreen flex flex-col">
     <Navbar class="flex-initial" />
     <Nuxt class="flex-auto" />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
   </div>
 </template>
 <script>
 import Navbar from '@/components/NavBar'
 export default {
   components: { Navbar },
+
+  head () {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }]
+    }
+  },
   mounted () {
     // NetlifyCMS
     // https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget

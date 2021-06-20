@@ -17,12 +17,20 @@
           <li>Visit: Willetton Primary School</li>
         </a>
       </ul>
+      {{ categories }}
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData ({ $content }) {
+    const categories = await $content('categories').fetch()
+    return {
+      categories
+    }
+  }
+}
 </script>
 
 <style>

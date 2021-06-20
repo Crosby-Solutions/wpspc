@@ -1,13 +1,12 @@
 <template>
-  <div class="nav flex flex-row justify-between w-full p-4 shadow">
+  <div class="nav flex flex-row justify-between w-full p-4">
     <div class="text-lg">
       Willetton Primary School Parents and Citizens Association
     </div>
-    <div>{{ categories }}</div>
     <ul>
-      <li v-for="(cat, i) in categories" :key="'cat'+i">
-        <NuxtLink :to="cat.path">
-          {{ cat.title }}
+      <li v-for="(category, i) in categories" :key="'cat2'+i">
+        <NuxtLink :to="'articles/'+category.slug">
+          {{ category.title }}
         </NuxtLink>
       </li>
     </ul>
@@ -16,12 +15,21 @@
 
 <script>
 export default {
-// TODO: get menu content from netlify CMS
-  async asyncData ({ $content }) {
-    const categories = await $content('categories').fetch()
+  data () {
     return {
-      categories
+      categories: []
     }
+  },
+  // TODO: get menu content from netlify CMS
+  mounted () {
+    this.$content('categories').fetch()
+      .then((res) => {
+        console.log('categories: ', res)
+        this.categories = res
+      })
+      .catch((err) => {
+        console.error(err)
+      })
   }
 }
 </script>

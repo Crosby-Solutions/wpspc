@@ -1,16 +1,16 @@
 [
   {
+    "name": "articles-slug",
+    "path": "/articles/:slug?",
+    "component": "/home/jcrosby/projects/wpspc/pages/articles/_slug.vue",
+    "chunkName": "pages/articles/_slug",
+    "_name": "_e5fc99c0"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/jcrosby/projects/wpspc/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_254ea51a"
-  },
-  {
-    "name": "slug",
-    "path": "/:slug",
-    "component": "/home/jcrosby/projects/wpspc/pages/_slug.vue",
-    "chunkName": "pages/_slug",
-    "_name": "_239803d2"
   }
 ]
