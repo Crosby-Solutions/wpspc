@@ -8,7 +8,20 @@
 import 'https://identity.netlify.com/v1/netlify-identity-widget.js'
 import Navbar from '@/components/NavBar'
 export default {
-  components: { Navbar }
+  components: { Navbar },
+  mounted () {
+    // NetlifyCMS
+    // https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', (user) => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
+        }
+      })
+    }
+  }
 }
 </script>
 <style>
