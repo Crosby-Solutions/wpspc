@@ -5,10 +5,12 @@
   </div>
 </template>
 <script>
+import 'https://identity.netlify.com/v1/netlify-identity-widget.js'
 import Navbar from '@/components/NavBar'
 export default {
   components: { Navbar }
-}</script>
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
