@@ -21,7 +21,7 @@ h2 {
   align-items: center;
   text-align: left;
   padding: 1rem;
-  background: rgb(249, 250, 251);
+  background: rgb(134, 177, 219);
   box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
 }
 
