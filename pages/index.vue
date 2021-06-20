@@ -3,11 +3,19 @@
     <h1 class="title">
       WPS P&C
     </h1>
+    <div class="subtitle">
+      The Willetton Primary School Parents and Citizens Association
+    </div>
+    <div class="w-1/2">
+      The Willetton Primary School Parents and Citizens Association, facilitates parent participation in our school; nurtures an open, engaged and friendly school community; provides for extra resources for our students through fundraising and facilitating events to enhance the school experience.
+    </div>
     <div
       class="links mt-4"
     >
       <ul>
-        <li>Willetton Primary School</li>
+        <a href="https://willettonps.wa.edu.au" target="_blank">
+          <li>Visit: Willetton Primary School</li>
+        </a>
       </ul>
     </div>
   </div>
@@ -31,6 +39,9 @@ export default {}
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1rem;
+  background: rgb(249, 250, 251);
+  box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
 }
 
 .title {

@@ -10,9 +10,10 @@ import '../node_modules/@nuxtjs/tailwindcss/dist/runtime/tailwind.css'
 
 import '../node_modules/prismjs/themes/prism.css'
 
+import _309dff80 from '../layouts/article.vue'
 import _6f6c098b from '../layouts/default.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_article": sanitizeComponent(_309dff80),"_default": sanitizeComponent(_6f6c098b) }
 
 export default {
   render (h, props) {

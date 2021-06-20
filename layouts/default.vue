@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Navbar />
-    <Nuxt />
+  <div class="fullscreen flex flex-col">
+    <Navbar class="flex-initial" />
+    <Nuxt class="flex-auto" />
   </div>
 </template>
 <script>
@@ -20,8 +20,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-image: linear-gradient(to right, #f6782b, black);
 }
-
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 *,
 *::before,
 *::after {
