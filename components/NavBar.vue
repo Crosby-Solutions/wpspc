@@ -24,11 +24,7 @@ export default {
   mounted () {
     this.$content('categories').fetch()
       .then((res) => {
-        console.log('categories: ', res)
         this.categories = res
-      })
-      .catch((err) => {
-        console.error(err)
       })
   }
 }
