@@ -2,10 +2,10 @@
   <div class="fullscreen flex flex-col">
     <Navbar class="flex-initial" />
     <Nuxt class="flex-auto" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
   </div>
 </template>
 <script>
-import 'https://identity.netlify.com/v1/netlify-identity-widget.js'
 import Navbar from '@/components/NavBar'
 export default {
   components: { Navbar },
