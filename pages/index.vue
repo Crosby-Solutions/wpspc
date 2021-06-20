@@ -3,23 +3,12 @@
     <h1 class="title">
       WPS P&C
     </h1>
-    <div class="links mt-4">
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button--green"
-      >
-        Documentation
-      </a>
-      <a
-        href="https://github.com/nuxt/nuxt.js"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button--grey"
-      >
-        GitHub
-      </a>
+    <div
+      class="links mt-4"
+    >
+      <ul>
+        <li>Willetton Primary School</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -38,6 +27,7 @@ export default {}
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -62,6 +52,7 @@ export default {}
 }
 
 .links {
+  display: block;
   padding-top: 15px;
 }
 </style>

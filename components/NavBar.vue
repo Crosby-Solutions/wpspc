@@ -1,6 +1,8 @@
 <template>
-  <div class="flex flex-row justify-between w-full bg-yellow-600 p-4">
-    <div>WPS P&C</div>
+  <div class="nav flex flex-row justify-between w-full p-4 shadow">
+    <div class="text-lg">
+      Willetton Primary School Parents and Citizens Association
+    </div>
     <div>> Menu</div>
   </div>
 </template>
@@ -12,5 +14,9 @@ export default {
 </script>
 
 <style>
+.nav {
+
+  background: #f6782b;
+}
 
 </style>
