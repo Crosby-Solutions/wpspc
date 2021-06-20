@@ -6,7 +6,9 @@
     <div>{{ categories }}</div>
     <ul>
       <li v-for="(cat, i) in categories" :key="'cat'+i">
-        {{ cat }}
+        <NuxtLink :to="cat.path">
+          {{ cat.title }}
+        </NuxtLink>
       </li>
     </ul>
   </div>

@@ -3,6 +3,14 @@
     "name": "index",
     "path": "/",
     "component": "/home/jcrosby/projects/wpspc/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_254ea51a"
+  },
+  {
+    "name": "slug",
+    "path": "/:slug",
+    "component": "/home/jcrosby/projects/wpspc/pages/_slug.vue",
+    "chunkName": "pages/_slug",
+    "_name": "_239803d2"
   }
 ]
