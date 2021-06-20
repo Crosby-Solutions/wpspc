@@ -1,7 +1,11 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  // Nuxt Deployment: prevent 404 error
+  // https://nuxtjs.org/docs/2.x/deployment/netlify-deployment/
+  generate: {
+    fallback: true
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Willetton Primary School - P & C',
