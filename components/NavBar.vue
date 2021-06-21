@@ -1,7 +1,9 @@
 <template>
   <div class="nav flex flex-col justify-between w-full">
     <div class="text-lg p-4">
-      Willetton Primary School Parents and Citizens Association
+      <nuxt-link to="/">
+        Willetton Primary School Parents and Citizens Association
+      </nuxt-link>
     </div>
     <ul class="flex flex-row">
       <li
@@ -9,8 +11,8 @@
         :key="'cat2'+i"
         class="px-4 py-2"
       >
-        <NuxtLink :to="category.slug">
-          {{ category.title }}
+        <NuxtLink :to="'/'+category.path">
+          {{ category.path }}
         </NuxtLink>
       </li>
     </ul>

@@ -1,13 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container overflow-auto">
     <div class="w-full">
       <h1 class="text-2xl capitalize">
         {{ category }}
       </h1>
       <div v-if="articles.length">
-        <ul>
-          <li v-for="(article, i) in articles" :key="'article-'+i">
-            <CardArticle :article="article" />
+        <ul class="flex flex-row w-full max-w-full">
+          <li v-for="(article, i) in articles" :key="'article-'+i" class="w-1/2">
+            <NuxtLink :to="'/articles/'+article.slug">
+              <CardArticle :article="article" />
+            </NuxtLink>
           </li>
         </ul>
       </div>

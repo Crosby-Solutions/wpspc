@@ -1,5 +1,5 @@
 ---
 layout: link
 title: News
-path: news
+link: news
 ---

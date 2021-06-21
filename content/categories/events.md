@@ -1,5 +1,5 @@
 ---
 layout: link
 title: Events
-path: events
+link: events
 ---
