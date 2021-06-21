@@ -3,7 +3,9 @@ layout: article
 title: School Banking
 date: 2021-06-20T09:25:45.911Z
 thumbnail: https://www.commbank.com.au/content/dam/commbank-assets/banking/school-banking/2019-01/schoolbanking-youthapp_how_to.jpg
-tags: [banking]
+tags:
+  - banking
+category: banking
 ---
 
 # School Banking Program
