@@ -7,10 +7,9 @@
       <div v-if="articles.length">
         <ul>
           <li v-for="(article, i) in articles" :key="'article-'+i">
-            {{ article }}
+            <CardArticle :article="article" />
           </li>
         </ul>
-        {{ articles }}
       </div>
       <p v-else>
         There are no {{ category }} articles.
@@ -20,9 +19,11 @@
 </template>
 
 <script>
+import CardArticle from '@/components/CardArticle'
 export default {
+  components: { CardArticle },
   async asyncData ({ $content, params }) {
-    const articles = await $content('articles').where({ tags: params.categories }).fetch()
+    const articles = await $content('articles').where({ category: params.categories }).fetch()
     return {
       articles
     }
