@@ -35,7 +35,12 @@ collections:
           default: "article"
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Permanent", name: "permanent", widget: "boolean" }
+      - {
+          label: "Permanent",
+          name: "permanent",
+          widget: "boolean",
+          required: false
+        }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - {
           label: "Featured Image",
@@ -54,3 +59,27 @@ collections:
         }
       # - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
       - { label: "Body", name: "body", widget: "markdown" }
+- name: "events" # Used in routes, e.g., /admin/collections/blog
+    label: "Events" # Used in the UI
+    folder: "content/events" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "event"
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "When", name: "when", widget: "string", required: false }
+      - { label: "Where", name: "location", widget: "map", required: false }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          required: false
+        }
+      # - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - { label: "Body", name: "body", widget: "markdown", required: false }

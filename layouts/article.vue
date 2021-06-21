@@ -22,7 +22,7 @@ h2 {
   text-align: left;
   padding: 1rem;
   background: #eee;
-  box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
+  box-shadow: 0 8px 6px 6px rgba(128, 128, 128, 0.5);
 }
 
 </style>
