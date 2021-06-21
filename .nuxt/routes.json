@@ -12,5 +12,12 @@
     "component": "/home/jcrosby/projects/wpspc/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_254ea51a"
+  },
+  {
+    "name": "categories",
+    "path": "/:categories",
+    "component": "/home/jcrosby/projects/wpspc/pages/_categories.vue",
+    "chunkName": "pages/_categories",
+    "_name": "_3f62b783"
   }
 ]
