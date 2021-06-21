@@ -1,7 +1,15 @@
 <template>
-  <div>
-    <h2>{{ post.title }}</h2>
-    <nuxt-content :document="post" />
+  <div class="container m-auto">
+    <div class="content">
+      <h2>{{ post.title }}</h2>
+      <img class="float-right" :src="post.thumbnail">
+      <ul>
+        <li v-for="(tag,i) in post.tags" :key="'tag'+i">
+          {{ tag }}
+        </li>
+      </ul>
+      <nuxt-content :document="post" />
+    </div>
   </div>
 </template>
 
