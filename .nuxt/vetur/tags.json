@@ -2,6 +2,12 @@
   "CardArticle": {
     "description": "Auto imported from components/CardArticle.vue"
   },
+  "CrosbySolutions": {
+    "description": "Auto imported from components/CrosbySolutions.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },

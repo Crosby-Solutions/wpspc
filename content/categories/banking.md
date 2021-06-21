@@ -1,5 +1,6 @@
 ---
 layout: link
-title: School Banking
+title: Banking
 link: banking
+order: 0
 ---

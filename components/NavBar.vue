@@ -8,7 +8,7 @@
         WPS P&C
       </title>
     </nuxt-link>
-    <ul class="flex flex-row">
+    <ul class="flex flex-row  overflow-x-auto">
       <li
         v-for="(category, i) in categories"
         :key="'cat2'+i"
@@ -46,9 +46,11 @@ export default {
   box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
 }
 .nav {
+  position: relative;
   border-bottom: 2px #f6782b solid;
   box-shadow: 0 2px 6px 6px rgba(128, 128, 128, 0.5);
   z-index: 10;
+
   /* background: #f6782b;
    */
 }

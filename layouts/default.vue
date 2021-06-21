@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen flex flex-col">
+  <div class="fullscreen flex flex-col relative">
     <Navbar class="flex-initial" />
     <Nuxt class="flex-auto" />
   </div>
