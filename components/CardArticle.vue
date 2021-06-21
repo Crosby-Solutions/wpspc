@@ -1,6 +1,8 @@
 <template>
-  <div class="border-2 border-yellow-700 m-4 p-4">
-    <h2>{{ article.title }}</h2>
+  <div class="text-sm md:text-base border-2 border-yellow-700 m-4">
+    <h2 class="text-base md:text-2xl">
+      {{ article.title }}
+    </h2>
     <p v-if="!article.permanent">
       {{ article.date }}
     </p>

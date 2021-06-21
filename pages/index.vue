@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-y-auto overflow-x-hidden">
     <div class="container relative">
-      <div class="hero-img -mt-4" />
+      <div class="hero-img -mt-4 h-48" />
       <h1 class="title">
         WPS P&C
       </h1>
@@ -9,8 +9,11 @@
         The Willetton Primary School <br>
         Parents and Citizens Association
       </div>
-      <div class="w-3/4">
-        The Willetton Primary School Parents and Citizens Association, facilitates parent participation in our school; nurtures an open, engaged and friendly school community; provides for extra resources for our students through fundraising and facilitating events to enhance the school experience.
+      <div class="w-3/4 text-left">
+        The Willetton Primary School Parents and Citizens Association, <br>
+        - facilitates parent participation in our school;<br>
+        - nurtures an open, engaged and friendly school community;<br>
+        - provides for extra resources for our students through fundraising and facilitating events to enhance the school experience.
       </div>
       <div
         class="links mt-4"
@@ -18,7 +21,7 @@
         <ul>
           <a href="https://willettonps.wa.edu.au" target="_blank">
             <li>
-              <img src="@/assets/wps_logo.png" width="200px" class="m-auto">
+              <img src="@/assets/wps_logo.png" height="150px" width="150px" class="m-auto">
               Willetton Primary School Website</li>
           </a>
         </ul>
@@ -47,6 +50,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 .container {
   margin: 0 auto;
@@ -61,13 +65,20 @@ export default {
   box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
 }
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Architects Daughter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 72px;
-  color: #35495e;
+  font-size: 68px;
+  color: #f6782b;
   letter-spacing: 1px;
+  -webkit-text-stroke: 1px black;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+
 }
 
 .subtitle {
@@ -76,6 +87,7 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+  @apply text-2xl md:text-4xl;
 }
 
 .links {

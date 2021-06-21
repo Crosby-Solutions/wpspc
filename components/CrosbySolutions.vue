@@ -4,7 +4,7 @@
     target="_blank"
     rel="wps-bp-kpi"
     class="logo-cs"
-  >Created with 💚 by
+  >Created with 🧡 by
     <object
       id="logo"
       :data="require('@/assets/cs-logo-white-one-line.svg')"

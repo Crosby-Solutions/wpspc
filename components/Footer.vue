@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full relative text-white bg-black flex flex-row justify-evenly p-4">
+  <div class="w-full relative text-white bg-black flex flex-row justify-evenly p-8">
     <p class="text-sm">
       Willetton Primary School P&C<br>
       ABN: 57783397985<br>

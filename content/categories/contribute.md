@@ -2,5 +2,5 @@
 layout: link
 title: Contribute
 link: contribute
-order: 70
+order: -70
 ---

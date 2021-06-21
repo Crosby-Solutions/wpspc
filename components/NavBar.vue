@@ -1,24 +1,35 @@
 <template>
   <div class="nav flex flex-col justify-between w-full bg-gray-200">
-    <nuxt-link to="/">
-      <title class="hidden md:block text-lg p-4">
+    <nuxt-link class="home" to="/">
+      <title class="nav-title hidden lg:block text-xl p-4">
         Willetton Primary School Parents and Citizens Association
       </title>
-      <title class="block md:hidden text-lg p-4">
+      <title class="nav-title block lg:hidden text-xl p-4 pb-0">
         WPS P&C
       </title>
     </nuxt-link>
-    <ul class="flex flex-row  overflow-x-auto">
-      <li
-        v-for="(category, i) in categories"
-        :key="'cat2'+i"
-        class="menu-option px-4 py-2"
-      >
-        <NuxtLink :to="'/'+category.link">
-          {{ category.title }}
+    <div class="w-full flex flex-row justify-between h-10">
+      <div :class="{'scroll-active': leftScrollActive, 'scroll-hidden':true, 'scroll-left': true }">
+        &lt;
+      </div>
+      <ul id="navScroll" class="flex-auto flex flex-row overflow-x-auto">
+        <NuxtLink
+          v-for="(category, i) in categories"
+          :key="'cat2'+i"
+          class="options"
+          :to="'/'+category.link"
+        >
+          <li
+            class="menu-option px-4 py-2"
+          >
+            {{ category.title }}
+          </li>
         </NuxtLink>
-      </li>
-    </ul>
+      </ul>
+      <div :class="{'scroll-active': rightScrollActive, 'scroll-hidden':true, 'scroll-right':true }">
+        &gt;
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,21 +37,54 @@
 export default {
   data () {
     return {
-      categories: []
+      categories: [],
+      leftScrollActive: false,
+      rightScrollActive: true
     }
   },
   mounted () {
-    this.$content('categories').fetch()
+    const nav = document.getElementById('navScroll')
+    nav.addEventListener('scroll', e => this.checkScrollLocation(e))
+
+    this.$content('categories').sortBy('order', 'asc').fetch()
       .then((res) => {
         this.categories = res
       })
+  },
+  methods: {
+    checkScrollLocation (e) {
+      // console.log('e: ', e)
+      const buffer = 25
+      this.leftScrollActive = e.target.scrollLeft > buffer
+      this.rightScrollActive = e.target.scrollLeft + buffer < (e.target.scrollWidth - e.target.offsetWidth)
+    }
   }
 }
 </script>
 
 <style>
+.nav-title {
+  font-size: 36px;
+  color: #f6782b;
+  font-weight:bold;
+  font-family: 'Architects Daughter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-text-stroke: 1px black;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+
+}
 .menu-option:hover{
   background: #f6782b;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
+}
+.options.nuxt-link-exact-active{
+  background: #888;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
@@ -50,9 +94,18 @@ export default {
   border-bottom: 2px #f6782b solid;
   box-shadow: 0 2px 6px 6px rgba(128, 128, 128, 0.5);
   z-index: 10;
-
-  /* background: #f6782b;
-   */
+}
+.scroll-hidden {
+  @apply hidden flex-initial py-2 text-gray-200;
+}
+.scroll-active {
+  @apply md:hidden block absolute text-yellow-700 z-10 bg-gray-200;
+}
+.scroll-left {
+  @apply px-2 left-0;
+}
+.scroll-right {
+  @apply px-2 right-0;
 }
 
 </style>

@@ -2,5 +2,5 @@
 layout: link
 title: Events
 link: events
-order: 80
+order: -80
 ---
