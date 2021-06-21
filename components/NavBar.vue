@@ -11,8 +11,8 @@
         :key="'cat2'+i"
         class="px-4 py-2"
       >
-        <NuxtLink :to="'/'+category.path">
-          {{ category.path }}
+        <NuxtLink :to="'/'+category.link">
+          {{ category.title }}
         </NuxtLink>
       </li>
     </ul>
