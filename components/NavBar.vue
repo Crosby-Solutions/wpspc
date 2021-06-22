@@ -18,7 +18,7 @@
           :key="'cat2'+i"
           class="options"
           :to="{
-            path: category.link,
+            path: '/' + category.link,
             params: { category: category.link, layout: category.layout }
           }"
         >
