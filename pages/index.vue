@@ -11,7 +11,7 @@
             The Willetton Primary School <br>
             Parents and Citizens Association
           </div>
-          <div class="w-3/4 text-left">
+          <div class="w-full md:w-3/4 text-left m-auto">
             The Willetton Primary School Parents and Citizens Association, <br>
             - facilitates parent participation in our school;<br>
             - nurtures an open, engaged and friendly school community;<br>

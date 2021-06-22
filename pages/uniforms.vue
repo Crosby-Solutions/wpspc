@@ -7,15 +7,11 @@
       <div v-if="articles.length">
         <ul class="flex flex-row flex-wrap w-full">
           <li v-for="(article, i) in articles" :key="'article-'+i">
-            {{ layout }}
-            <NuxtLink v-if="layout === 'link'" :to="'/articles/'+article.slug">
-              {{ article.title }}
-            </NuxtLink>
-            <CardArticle v-else :article="article" />
+            <CardArticle :article="article" />
           </li>
         </ul>
       </div>
-      <ul class="flex flex-row flex-wrap w-full justify-between">
+      <ul class="flex flex-row flex-wrap w-full justify-around md:justify-between">
         <nuxt-link v-for="(uniform, i) in uniforms" :key="'uni' + i" :to="uniform.path">
           <li class="border-2 border-yellow-700 p-4 text-center m-4">
             <img :src="uniform.thumbnail" height="200" width="200" class="m-auto">
@@ -48,18 +44,18 @@ export default {
 </script>
 
 <style>
-.nuxt-content h1 {
+h1 {
   @apply text-3xl;
 }
 
-.nuxt-content h2 {
+h2 {
   @apply text-2xl;
 }
-.nuxt-content li {
+/* li {
   list-style: before;
   list-style-type: circle;
   margin-left: 2rem;
-}
+} */
 
 .nuxt-content a,
 .nuxt-content a:visited {

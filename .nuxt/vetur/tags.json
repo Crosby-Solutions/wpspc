@@ -14,9 +14,6 @@
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
-  },
   "NavBar": {
     "description": "Auto imported from components/NavBar.vue"
   }

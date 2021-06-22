@@ -11,5 +11,4 @@ You can directly use them in pages and other components without the need to impo
 - `<FBEmbed>` | `<f-b-embed>` (components/FBEmbed.vue)
 - `<FBRootEmbed>` | `<f-b-root-embed>` (components/FBRootEmbed.vue)
 - `<Footer>` | `<footer>` (components/Footer.vue)
-- `<Logo>` | `<logo>` (components/Logo.vue)
 - `<NavBar>` | `<nav-bar>` (components/NavBar.vue)

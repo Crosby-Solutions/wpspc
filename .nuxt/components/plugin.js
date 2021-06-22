@@ -7,7 +7,6 @@ const components = {
   FBEmbed: () => import('../../components/FBEmbed.vue' /* webpackChunkName: "components/f-b-embed" */).then(c => wrapFunctional(c.default || c)),
   FBRootEmbed: () => import('../../components/FBRootEmbed.vue' /* webpackChunkName: "components/f-b-root-embed" */).then(c => wrapFunctional(c.default || c)),
   Footer: () => import('../../components/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c)),
-  Logo: () => import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c)),
   NavBar: () => import('../../components/NavBar.vue' /* webpackChunkName: "components/nav-bar" */).then(c => wrapFunctional(c.default || c))
 }
 

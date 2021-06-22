@@ -1,7 +1,7 @@
 <template>
   <div class="fullscreen flex flex-col relative">
     <Facebook />
-    <Navbar class="flex-initial" />
+    <Navbar class="flex-initial h-24" />
     <Nuxt class="flex-auto" />
   </div>
 </template>

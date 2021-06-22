@@ -1,6 +1,6 @@
 <template>
   <div class="text-sm md:text-base border-2 border-yellow-700 m-4 text-left">
-    <h2 class="text-base md:text-2xl p-4">
+    <h2 class="text-lg md:text-2xl p-4">
       {{ article.title }}
     </h2>
     <p v-if="!article.permanent">

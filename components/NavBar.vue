@@ -18,7 +18,7 @@
           :key="'cat2'+i"
           class="options"
           :to="{
-            path: '/' + category.link,
+            path: '/'+category.link,
             params: { category: category.link, layout: category.layout }
           }"
         >
@@ -51,7 +51,7 @@ export default {
     const home = {
       layout: 'page',
       title: 'Home',
-      link: '/',
+      link: '',
       order: -999
     }
     this.$content('categories').sortBy('order', 'asc').fetch()
@@ -70,7 +70,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .nav-title {
   font-size: 36px;
   color: #f6782b;
