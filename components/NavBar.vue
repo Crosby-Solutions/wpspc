@@ -8,16 +8,19 @@
         WPS P&C
       </title>
     </nuxt-link>
-    <div class="w-full flex flex-row justify-between h-10">
+    <div class="w-full flex flex-row justify-between h-10 px-4">
       <div :class="{'scroll-active': leftScrollActive, 'scroll-hidden':true, 'scroll-left': true }">
         &lt;
       </div>
-      <ul id="navScroll" class="flex-auto flex flex-row overflow-x-auto">
+      <ul id="navScroll" class="flex-auto flex flex-row overflow-x-auto overflow-y-hidden">
         <NuxtLink
           v-for="(category, i) in categories"
           :key="'cat2'+i"
           class="options"
-          :to="'/'+category.link"
+          :to="{
+            path: category.link,
+            params: { category: category.link, layout: category.layout }
+          }"
         >
           <li
             class="menu-option px-4 py-2"
@@ -45,10 +48,15 @@ export default {
   mounted () {
     const nav = document.getElementById('navScroll')
     nav.addEventListener('scroll', e => this.checkScrollLocation(e))
-
+    const home = {
+      layout: 'page',
+      title: 'Home',
+      link: '/',
+      order: -999
+    }
     this.$content('categories').sortBy('order', 'asc').fetch()
       .then((res) => {
-        this.categories = res
+        this.categories = [home, ...res]
       })
   },
   methods: {
@@ -77,17 +85,26 @@ export default {
        1px 1px 0 #000;
 
 }
-.menu-option:hover{
-  background: #f6782b;
+.options {
+  border: 2px rgb(229, 231, 235) solid;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
+  border-bottom: 0;
+  box-sizing: border-box;
+
+}
+.options:hover{
+  background: #f6782b;
   box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
 }
 .options.nuxt-link-exact-active{
   background: #888;
+  border: 2px #f6782b solid;
+  box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
-  box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
+  border-bottom: 0;
+
 }
 .nav {
   position: relative;

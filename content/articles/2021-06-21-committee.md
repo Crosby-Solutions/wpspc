@@ -3,6 +3,7 @@ layout: article
 title: Committee
 permanent: true
 date: 2021-06-21T03:16:33.500Z
+order: -10
 category: about
 ---
 

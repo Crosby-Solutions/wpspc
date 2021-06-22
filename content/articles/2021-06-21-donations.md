@@ -3,11 +3,13 @@ layout: article
 title: Donations
 permanent: true
 date: 2021-06-21T03:53:27.641Z
+order: 0
 category: contribute
 ---
+
 You can donate directly to Willetton Primary School via the WPS P&C.
 
-This money contributes directly to your school.  This year we have
+This money contributes directly to your school. This year we have
 
 - purchased and upgraded the air-conditioners in each classroom,
 - contributed to sustainability initiatives, and

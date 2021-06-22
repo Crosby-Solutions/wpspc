@@ -1,13 +1,15 @@
 <template>
   <div class="fullscreen flex flex-col relative">
+    <Facebook />
     <Navbar class="flex-initial" />
     <Nuxt class="flex-auto" />
   </div>
 </template>
 <script>
 import Navbar from '@/components/NavBar'
+import Facebook from '@/components/FBRootEmbed'
 export default {
-  components: { Navbar },
+  components: { Navbar, Facebook },
 
   head () {
     return {

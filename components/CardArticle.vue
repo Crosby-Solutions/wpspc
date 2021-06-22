@@ -1,5 +1,5 @@
 <template>
-  <div class="text-sm md:text-base border-2 border-yellow-700 m-4">
+  <div class="text-sm md:text-base border-2 border-yellow-700 m-4 text-left">
     <h2 class="text-base md:text-2xl">
       {{ article.title }}
     </h2>
@@ -7,7 +7,7 @@
       {{ article.date }}
     </p>
     <img :src="article.thumbnail">
-    <!-- <Nuxt-content :document="article" /> -->
+    <Nuxt-content :document="article" class="p-4" />
   </div>
 </template>
 

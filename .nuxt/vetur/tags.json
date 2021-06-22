@@ -5,6 +5,12 @@
   "CrosbySolutions": {
     "description": "Auto imported from components/CrosbySolutions.vue"
   },
+  "FBEmbed": {
+    "description": "Auto imported from components/FBEmbed.vue"
+  },
+  "FBRootEmbed": {
+    "description": "Auto imported from components/FBRootEmbed.vue"
+  },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
