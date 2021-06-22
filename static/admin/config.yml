@@ -99,6 +99,11 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Size", name: "size", widget: "string" }
-      - { label: "Quantity", name: "quantity", widget: "number", default: 0 }
+      - { label: "Size 02", name: "qty-size-02", widget: "number", default: 0 }
+      - { label: "Size 04", name: "qty-size-04", widget: "number", default: 0 }
+      - { label: "Size 06", name: "qty-size-06", widget: "number", default: 0 }
+      - { label: "Size 08", name: "qty-size-08", widget: "number", default: 0 }
+      - { label: "Size 10", name: "qty-size-10", widget: "number", default: 0 }
+      - { label: "Size 12", name: "qty-size-12", widget: "number", default: 0 }
+      - { label: "Size 14", name: "qty-size-14", widget: "number", default: 0 }
       - { label: "Body", name: "body", widget: "markdown", required: false }

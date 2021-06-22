@@ -1,10 +1,24 @@
 [
   {
+    "name": "uniforms",
+    "path": "/uniforms",
+    "component": "/home/jcrosby/projects/wpspc/pages/uniforms.vue",
+    "chunkName": "pages/uniforms",
+    "_name": "_f096d0b2"
+  },
+  {
     "name": "articles-slug",
     "path": "/articles/:slug?",
     "component": "/home/jcrosby/projects/wpspc/pages/articles/_slug.vue",
     "chunkName": "pages/articles/_slug",
     "_name": "_e5fc99c0"
+  },
+  {
+    "name": "uniform-slug",
+    "path": "/uniform/:slug?",
+    "component": "/home/jcrosby/projects/wpspc/pages/uniform/_slug.vue",
+    "chunkName": "pages/uniform/_slug",
+    "_name": "_7c766137"
   },
   {
     "name": "index",
