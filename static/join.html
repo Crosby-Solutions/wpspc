@@ -1,16 +1,10 @@
-<template>
-  <div class="container">
-    <div class="text-left overflow-y-auto">
-      <h1 class="text-3xl">
-        Join the P&C
-      </h1>
-      <p>
-        P&C membership is not about being on a committee, but about keeping you connected to what is
-        happening and gives you a voice. It also allows you to vote on decisions at P&C meetings. If you can’t make
-        it to meetings, we’ll keep you in touch via emails of meeting agendas and the meeting minutes (what
-        happened at the meetings). But if you do make it to the meeting your family’s faction gets a faction point!
-      </p>
-      <form
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact us Form</title>
+    </head>
+    <body>
+       <form
         id="join"
         class="flex flex-col flex-initial text-center mx-auto w-max-96"
         name="join"
@@ -67,7 +61,6 @@
         <div class="tick-row">
           <input
             id="understandMembershipLength"
-            v-model="understandMembershipLength"
             type="checkbox"
             name="understandMembershipLength"
             required
@@ -78,7 +71,6 @@
         <div class="tick-row">
           <input
             id="understandEmail"
-            v-model="understandEmail"
             type="checkbox"
             name="understandEmail"
             required
@@ -90,70 +82,5 @@
           <input type="reset" class="button">
         </div>
       </form>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  data () {
-    return {
-      factionList: ['blue', 'green', 'gold', 'red', 'unsure'],
-      yearList: ['kindy', 'pre-prim.', 'year 1', 'year 2', 'year 3', 'year 4', 'year 5', 'year 6'],
-      form: {
-        name: '',
-        address: '',
-        phone: '',
-        mobile: '',
-        email: '',
-        data: '',
-        faction: '',
-        years: [],
-        understandMembershipLength: false,
-        understandEmailUse: false,
-        talents: []
-      }
-    }
-  }
-
-}
-</script>
-
-<style>
-.input-row {
-    @apply text-center w-full;
-  }
-.tick-row {
-    @apply text-center w-full;
-  }
-/* submit/reset row */
-.input-row:last-of-type {
-  @apply ml-auto mr-4 text-right;
-}
-.tick-row input,
-.input-row label {
-  @apply w-16 inline-block my-6 text-right align-top;
-}
-.input-row input,
-.input-row textarea,
-.input-row select {
-  @apply border border-gray-400 my-4 inline-block w-64;
-}
-.input-row input,
-.input-row select {
-  @apply p-4 py-2 ;
-}
-.tick-row label {
-    @apply w-64 inline-block text-left pb-4;
-}
-/* .tick-row input {
-  @apply w-12 my-4 align-top;
-} */
-.input-row input.button {
-    @apply p-4 py-2 w-32 mx-0 cursor-pointer;
-}
-.input-row input.button:first-of-type {
-    @apply bg-yellow-500;
-}
-
-</style>
+    </body>
+</html>
