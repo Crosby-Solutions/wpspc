@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _04eb4530 = () => interopDefault(import('../pages/contact.vue' /* webpackChunkName: "pages/contact" */))
+const _544d5212 = () => interopDefault(import('../pages/join.vue' /* webpackChunkName: "pages/join" */))
 const _1c047031 = () => interopDefault(import('../pages/thanks.vue' /* webpackChunkName: "pages/thanks" */))
 const _f096d0b2 = () => interopDefault(import('../pages/uniforms.vue' /* webpackChunkName: "pages/uniforms" */))
 const _e5fc99c0 = () => interopDefault(import('../pages/articles/_slug.vue' /* webpackChunkName: "pages/articles/_slug" */))
@@ -27,6 +28,10 @@ export const routerOptions = {
     path: "/contact",
     component: _04eb4530,
     name: "contact"
+  }, {
+    path: "/join",
+    component: _544d5212,
+    name: "join"
   }, {
     path: "/thanks",
     component: _1c047031,

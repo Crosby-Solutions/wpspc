@@ -34,7 +34,7 @@
           <label for="message">Enquiry:</label>
           <textarea id="message" v-model="form.message" :rows="5" />
         </div>
-        <div class="input-row">
+        <div class="input-row flex flex-row justify-between">
           <input type="submit" class="button">
           <input type="reset" class="button">
         </div>
@@ -74,20 +74,27 @@ export default {
 </script>
 
 <style scoped>
-.input-row input.button {
-    @apply p-4 py-2 w-36;
-}
 .input-row {
+  }
+/* submit/reset row */
+.input-row:last-of-type {
+  @apply ml-auto mr-4 w-80 text-right;
 }
 .input-row label {
-    @apply w-12 inline-block my-6 mr-8 text-right align-top;
+  @apply w-12 inline-block my-6 mr-8 text-right align-top;
 }
 .input-row input,
 .input-row textarea {
-    @apply w-80 border border-gray-400 m-4 inline-block;
+  @apply w-80 border border-gray-400 m-4 inline-block;
 }
 .input-row input {
-    @apply p-4 py-2 ;
+  @apply p-4 py-2 ;
+}
+.input-row input.button {
+    @apply p-4 py-2 w-32 mx-0 cursor-pointer;
+}
+.input-row input.button:first-of-type {
+    @apply bg-yellow-500;
 }
 td {
     @apply p-4 align-top;
