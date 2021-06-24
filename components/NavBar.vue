@@ -54,9 +54,15 @@ export default {
       link: '',
       order: -999
     }
+    const contact = {
+      layout: 'page',
+      title: 'Contact',
+      link: 'contact',
+      order: 999
+    }
     this.$content('categories').sortBy('order', 'asc').fetch()
       .then((res) => {
-        this.categories = [home, ...res]
+        this.categories = [home, ...res, contact]
       })
   },
   methods: {

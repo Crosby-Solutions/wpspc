@@ -1,5 +1,19 @@
 [
   {
+    "name": "contact",
+    "path": "/contact",
+    "component": "/home/jcrosby/projects/wpspc/pages/contact.vue",
+    "chunkName": "pages/contact",
+    "_name": "_04eb4530"
+  },
+  {
+    "name": "thanks",
+    "path": "/thanks",
+    "component": "/home/jcrosby/projects/wpspc/pages/thanks.vue",
+    "chunkName": "pages/thanks",
+    "_name": "_1c047031"
+  },
+  {
     "name": "uniforms",
     "path": "/uniforms",
     "component": "/home/jcrosby/projects/wpspc/pages/uniforms.vue",

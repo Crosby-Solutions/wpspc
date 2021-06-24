@@ -36,6 +36,9 @@ export default {
     }
   },
   computed: {
+    /**
+    take the list of keys from the uniform content,
+    filter down to those beginning with 'qty' */
     sizes () {
       return Object.keys(this.uniform)
         .filter(x => x.slice(0, 3) === 'qty')
