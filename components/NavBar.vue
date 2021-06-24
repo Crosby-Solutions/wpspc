@@ -8,11 +8,11 @@
         WPS P&C
       </title>
     </nuxt-link>
-    <div class="w-full flex flex-row justify-between h-10 px-4">
+    <div class="w-full flex flex-row justify-between px-4">
       <div :class="{'scroll-active': leftScrollActive, 'scroll-hidden':true, 'scroll-left': true }">
         &lt;
       </div>
-      <ul id="navScroll" class="flex-auto flex flex-row overflow-x-auto overflow-y-hidden">
+      <ul id="navScroll" class="flex-auto flex flex-row overflow-x-auto">
         <NuxtLink
           v-for="(category, i) in categories"
           :key="'cat2'+i"
@@ -23,7 +23,7 @@
           }"
         >
           <li
-            class="menu-option px-4 py-2"
+            class="menu-option"
           >
             {{ category.title }}
           </li>
@@ -92,15 +92,16 @@ export default {
 
 }
 .options {
-  border: 2px rgb(229, 231, 235) solid;
+  border: 0px rgb(229, 231, 235) solid;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
-  border-bottom: 0;
   box-sizing: border-box;
+  @apply px-4 py-2;
 
 }
 .options:hover{
-  background: #f6782b;
+  /* background: #f6782b; */
+  background: #eee;
   box-shadow: inset 0 4px 4px 4px rgba(128, 128, 128, 0.5);
 }
 .options.nuxt-link-exact-active{
