@@ -1,21 +1,29 @@
 <template>
   <div class="container">
-    <div class="events text-left">
+    <div class="events text-left w-full">
       <h1 class="">
         Events
       </h1>
-      {{ events }}
       <div class="">
-        <h2>
-          Event List:
-        </h2>
-        <ul>
-          <nuxt-link v-for="(event, i) in events" :key="'event-'+i" :to="event.path">
-            <li>
-              {{ event.title }} - {{ event.when }} - {{ event.date }} - {{ getTerm(event.date) }}
-            </li> -
-          </nuxt-link>
-        </ul>
+        <div v-for="term in termsWithEvents" :key="'term-'+term" class="terms">
+          <h2>
+            Term {{ term }}
+          </h2>
+          <ul>
+            <nuxt-link v-for="(event, i) in events.filter(e => e.term === term)" :key="'event-'+i" :to="event.path">
+              <li>
+                <h3>
+                  {{ event.title }}
+                </h3>
+                <p>
+                  {{ event.when }} - {{ event.date.split('T')[0].split('-').reverse().join('-') }}
+                </p>
+                <br><Nuxt-Content :document="event.body" />
+                <br>
+              </li>
+            </nuxt-link>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -24,21 +32,41 @@
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    const events = await $content('events').sortBy('date', 'asc').fetch()
+    const eventsContent = await $content('events').sortBy('date', 'asc').fetch()
     return {
-      events
+      eventsContent
+    }
+  },
+  computed: {
+    events () {
+      const output = []
+      this.eventsContent.forEach((e) => {
+        e.term = this.getTerm(e.date)
+        output.push(e)
+      })
+      return output
+    },
+    termsWithEvents () {
+      const output = []
+      this.events.forEach((e) => {
+        if (!output.includes(e.term)) {
+          output.push(e.term)
+        }
+      })
+      return output.sort()
     }
   },
   methods: {
     getTerm (date) {
+      if (!date) { return date }
+      if (date.length < 4) { return undefined }
       const year = date.slice(0, 4)
-      // month is zero-indexed
-      const breakPoints = [new Date(`${year}-3-16`), new Date(`${year}-6-10`), new Date(`${year}-9-4`)]
+      const breakPoints = [new Date(`${year}-4-16`), new Date(`${year}-7-10`), new Date(`${year}-10-4`)]
       const index = breakPoints.findIndex((d) => {
         return Date.parse(d) > Date.parse(date)
       })
-      console.log('index: ', index)
-      return index
+      if (index === -1) { return 4 } // not found will mean term 4
+      return index + 1
     }
   }
 }
