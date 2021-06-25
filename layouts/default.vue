@@ -68,6 +68,7 @@ h1 {
   @apply text-3xl;
 }
 h2 {
+    color: #f6782b;
   @apply text-2xl;
 }
 h3 {

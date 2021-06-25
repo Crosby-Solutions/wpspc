@@ -15,10 +15,10 @@
                 <h3>
                   {{ event.title }}
                 </h3>
-                <p>
-                  {{ event.when }} - {{ event.date.split('T')[0].split('-').reverse().join('-') }}
+                <p class="italic">
+                  <span v-if="event.showWhen">{{ event.when }}</span><span v-if="event.showWhen && event.showDate"> - </span><span v-if="event.showDate">{{ event.date.split('T')[0].split('-').reverse().join('-') }}</span>
                 </p>
-                <br><Nuxt-Content :document="event.body" />
+                <Nuxt-Content :document="event" />
                 <br>
               </li>
             </nuxt-link>

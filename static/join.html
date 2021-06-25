@@ -16,49 +16,80 @@
         <input type="hidden" name="form-name" value="join">
         <div class="input-row">
           <label for="name">Name: </label>
-          <input id="name" v-model="form.name" type="text" required>
+          <input id="name" name="name" v-model="form.name" type="text" required>
         </div>
         <div class="input-row">
-          <label for="email">Address: </label>
-          <input id="email" v-model="form.address" type="text" required>
+          <label for="address">Address: </label>
+          <input id="address" name="address" v-model="form.address" type="text" required>
         </div>
         <div class="input-row">
           <label for="phone">Phone: </label>
-          <input id="phone" v-model="form.phone" type="tel" required>
+          <input id="phone" name="phone" v-model="form.phone" type="tel" required>
         </div>
         <div class="input-row">
-          <label for="phone">Mobile: </label>
-          <input id="phone" v-model="form.mobile" type="tel" required>
+          <label for="mobile">Mobile: </label>
+          <input id="mobile" name="mobile" v-model="form.mobile" type="tel" required>
         </div>
         <div class="input-row">
           <label for="email">Email: </label>
-          <input id="email" v-model="form.email" type="email" required>
+          <input id="email" name="email" v-model="form.email" type="email" required>
         </div>
         <div class="input-row">
-          <label for="email">Faction: </label>
-          <select id="email" v-model="form.faction" required>
+          <label for="faction">Faction: </label>
+          <select id="faction" name="faction" v-model="form.faction" required>
             <option v-for="faction in factionList" :key="faction" :value="faction" class="capitalize">
               {{ faction }}
             </option>
           </select>
         </div>
-        <p class="text-left">
-          My child/ren is/are in Year(s):
-        </p>
-        <div class="mx-auto flex flex-row flex-wrap justify-between">
-          <div v-for="year in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
             <input
-              :id="'years-'+year"
-              class="year-check"
-              type="checkbox"
-              :value="form.years"
-              :name="'years-'+year"
+                :id="years-kindy"
+                type="checkbox"
+                :name="years-kindy"
             >
-            <label :for="year" class="year-label text-sm capitalize">{{ year }}</label>
-          </div>
-        </div>
-        <hr class="my-2">
-        <div class="tick-row">
+            <label :for="years-kindy">Kindy</label>
+            <input
+                :id="years-pre-primary"
+                type="checkbox"
+                :name="years-pre-primary"
+            >
+            <label :for="years-pre-primary">Pre-primary</label>
+            <input
+                :id="years-1"
+                type="checkbox"
+                :name="years-1"
+            >
+            <label :for="years-1">Year 1</label>
+            <input
+                :id="years-2"
+                type="checkbox"
+                :name="years-2"
+            >
+            <label :for="years-2">Year 2</label>
+            <input
+                :id="years-3"
+                type="checkbox"
+                :name="years-3"
+            >
+            <label :for="years-3">Year 3</label>
+            <input
+                :id="years-4"
+                type="checkbox"
+                :name="years-4"
+            >
+            <label :for="years-4">Year 4</label>
+            <input
+                :id="years-5"
+                type="checkbox"
+                :name="years-5"
+            >
+            <label :for="years-5">Year 5</label>
+            <input
+                :id="years-6"
+                type="checkbox"
+                :name="years-6"
+            >
+            <label :for="years-6">Year 6</label>
           <input
             id="understandMembershipLength"
             type="checkbox"
@@ -67,8 +98,6 @@
           >
           <label for="understandMembershipLength">I understand that my membership is current until the next AGM and that by joining the P&C I
             agree to abide by the Rules of the Association (available from the P&C website).</label>
-        </div>
-        <div class="tick-row">
           <input
             id="understandEmail"
             type="checkbox"
@@ -76,7 +105,6 @@
             required
           >
           <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
-        </div>
         <div class="input-row flex flex-row justify-between">
           <input type="submit" class="button">
           <input type="reset" class="button">
