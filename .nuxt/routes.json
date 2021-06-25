@@ -7,6 +7,22 @@
     "_name": "_04eb4530"
   },
   {
+    "name": "events",
+    "path": "/events",
+    "component": "/home/jcrosby/projects/wpspc/pages/events.vue",
+    "chunkName": "pages/events",
+    "children": [
+      {
+        "name": "events-slug",
+        "path": ":slug?",
+        "component": "/home/jcrosby/projects/wpspc/pages/events/_slug.vue",
+        "chunkName": "pages/events/_slug",
+        "_name": "_744172fc"
+      }
+    ],
+    "_name": "_d3559afe"
+  },
+  {
     "name": "join",
     "path": "/join",
     "component": "/home/jcrosby/projects/wpspc/pages/join.vue",

@@ -11,7 +11,7 @@
           </li>
         </ul>
       </div>
-      <ul class="flex flex-row flex-wrap w-full justify-around md:justify-between">
+      <ul v-if="uniforms.length" class="flex flex-row flex-wrap w-full justify-around md:justify-between">
         <nuxt-link v-for="(uniform, i) in uniforms" :key="'uni' + i" :to="uniform.path">
           <li class="border-2 border-yellow-700 p-4 text-center m-4">
             <img :src="uniform.thumbnail" height="200" width="200" class="m-auto">
