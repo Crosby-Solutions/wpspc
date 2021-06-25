@@ -1,24 +1,25 @@
 <template>
   <div class="overflow-y-auto overflow-x-hidden">
     <div class="container relative">
-      <div class="hero-img -mt-4 h-48" />
-      <div class="content flex flex-row flex-wrap justify-between">
-        <div class="left">
-          <h1 class="title">
-            WPS P&C
-          </h1>
-          <div class="subtitle">
+      <div class="hero-img -mt-4 h-48 relative">
+        <h1 class="title absolute bottom-4 left-1/2">
+          WPS P&C
+        </h1>
+      </div>
+      <div class="content flex flex-row flex-wrap justify-around w-full">
+        <div class="left my-auto">
+          <div class="subtitle p-4">
             The Willetton Primary School <br>
             Parents and Citizens Association
           </div>
-          <div class="w-full md:w-3/4 text-left m-auto">
+          <div class="w-full md:w-2/3 text-left m-auto">
             The Willetton Primary School Parents and Citizens Association, <br>
             - facilitates parent participation in our school;<br>
             - nurtures an open, engaged and friendly school community;<br>
             - provides for extra resources for our students through fundraising and facilitating events to enhance the school experience.
           </div>
           <div
-            class="links mt-4"
+            class="links"
           >
             <ul>
               <a href="https://willettonps.wa.edu.au" target="_blank" class="p-4">
@@ -52,34 +53,23 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 
-.container {
-  margin: 0 auto;
-  min-height: calc(100vh - 102px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  background: rgb(249, 250, 251);
-  box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
-}
 .title {
-  font-family: 'Architects Daughter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Rock Salt', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 68px;
+  font-size: 36px;
   color: #f6782b;
   letter-spacing: 1px;
   -webkit-text-stroke: 1px black;
+  transform: translate(-50%, -50%);
    text-shadow:
        3px 3px 0 #000,
      -1px -1px 0 #000,
@@ -100,7 +90,6 @@ export default {
 
 .links {
   display: block;
-  padding-top: 15px;
 }
 .hero-img {
   height: 200px;

@@ -48,6 +48,30 @@ html {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  background: rgb(249, 250, 251);
+  box-shadow: 0 6px 6px 6px rgba(128, 128, 128, 0.5);
+  box-sizing: border-box;
+}
+h1 {
+  @apply text-3xl;
+}
+h2 {
+  @apply text-2xl;
+}
+h3 {
+  @apply text-xl;
 }
 
 </style>

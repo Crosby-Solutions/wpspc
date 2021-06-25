@@ -4,11 +4,11 @@
       <title class="nav-title hidden lg:block text-xl p-4">
         Willetton Primary School Parents and Citizens Association
       </title>
-      <title class="nav-title block lg:hidden text-xl p-4 pb-0">
+      <title class="nav-title block lg:hidden text-xl p-4">
         WPS P&C
       </title>
     </nuxt-link>
-    <div class="w-full flex flex-row justify-between px-4">
+    <div class="w-full flex flex-row justify-between relative">
       <div :class="{'scroll-active': leftScrollActive, 'scroll-hidden':true, 'scroll-left': true }">
         &lt;
       </div>
@@ -22,9 +22,7 @@
             params: { category: category.link, layout: category.layout }
           }"
         >
-          <li
-            class="menu-option"
-          >
+          <li class="menu-option">
             {{ category.title }}
           </li>
         </NuxtLink>
@@ -58,11 +56,17 @@ export default {
       layout: 'page',
       title: 'Contact',
       link: 'contact',
+      order: 998
+    }
+    const join = {
+      layout: 'page',
+      title: 'Join',
+      link: 'join',
       order: 999
     }
     this.$content('categories').sortBy('order', 'asc').fetch()
       .then((res) => {
-        this.categories = [home, ...res, contact]
+        this.categories = [home, ...res, contact, join]
       })
   },
   methods: {
@@ -77,11 +81,12 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 .nav-title {
-  font-size: 36px;
+  font-size: 24px;
   color: #f6782b;
   font-weight:bold;
-  font-family: 'Architects Daughter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Rock Salt', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-text-stroke: 1px black;
    text-shadow:
        3px 3px 0 #000,
@@ -123,13 +128,17 @@ export default {
   @apply hidden flex-initial py-2 text-gray-200;
 }
 .scroll-active {
-  @apply md:hidden block absolute text-yellow-700 z-10 bg-gray-200;
+  @apply md:hidden block text-yellow-700 z-10 bg-gray-200;
 }
-.scroll-left {
-  @apply px-2 left-0;
+.scroll-left,
+.scroll-right {
+  @apply px-2 w-6 absolute;
 }
 .scroll-right {
-  @apply px-2 right-0;
+  @apply right-0;
+}
+.scroll-left {
+  @apply left-0;
 }
 
 </style>

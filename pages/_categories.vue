@@ -5,7 +5,7 @@
         {{ category }}
       </h1>
       <div v-if="articles.length">
-        <ul class="flex flex-row flex-wrap w-full">
+        <ul class="flex flex-column flex-wrap w-full max-h-4/5">
           <li v-for="(article, i) in articles" :key="'article-'+i" class="w-full md:w-1/2">
             {{ layout }}
             <NuxtLink v-if="layout === 'link'" :to="'/articles/'+article.slug">

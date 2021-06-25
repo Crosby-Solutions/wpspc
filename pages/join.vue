@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="text-left overflow-y-auto">
+    <div class="text-left">
       <h1 class="text-3xl">
         Join the P&C
       </h1>
@@ -25,33 +25,33 @@
           <input id="name" v-model="form.name" type="text" required>
         </div>
         <div class="input-row">
-          <label for="email">Address: </label>
-          <input id="email" v-model="form.address" type="text" required>
+          <label for="address">Address: </label>
+          <input id="address" v-model="form.address" type="text" required>
         </div>
         <div class="input-row">
           <label for="phone">Phone: </label>
           <input id="phone" v-model="form.phone" type="tel" required>
         </div>
         <div class="input-row">
-          <label for="phone">Mobile: </label>
-          <input id="phone" v-model="form.mobile" type="tel" required>
+          <label for="mobile">Mobile: </label>
+          <input id="mobile" v-model="form.mobile" type="tel" required>
         </div>
         <div class="input-row">
           <label for="email">Email: </label>
           <input id="email" v-model="form.email" type="email" required>
         </div>
         <div class="input-row">
-          <label for="email">Faction: </label>
-          <select id="email" v-model="form.faction" required>
+          <label for="faction">Faction: </label>
+          <select id="faction" v-model="form.faction" required>
             <option v-for="faction in factionList" :key="faction" :value="faction" class="capitalize">
               {{ faction }}
             </option>
           </select>
         </div>
-        <p class="text-left">
+        <p class="full-row">
           My child/ren is/are in Year(s):
         </p>
-        <div class="mx-auto flex flex-row flex-wrap justify-between">
+        <div class="full-row">
           <div v-for="year in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
             <input
               :id="'years-'+year"
@@ -63,11 +63,11 @@
             <label :for="year" class="year-label text-sm capitalize">{{ year }}</label>
           </div>
         </div>
-        <hr class="my-2">
+        <hr width="40%" class="my-2 mx-auto">
         <div class="tick-row">
           <input
             id="understandMembershipLength"
-            v-model="understandMembershipLength"
+            v-model="form.understandMembershipLength"
             type="checkbox"
             name="understandMembershipLength"
             required
@@ -78,14 +78,14 @@
         <div class="tick-row">
           <input
             id="understandEmail"
-            v-model="understandEmail"
+            v-model="form.understandEmail"
             type="checkbox"
             name="understandEmail"
             required
           >
           <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
         </div>
-        <div class="input-row flex flex-row justify-between">
+        <div class="input-row">
           <input type="submit" class="button">
           <input type="reset" class="button">
         </div>
@@ -99,7 +99,7 @@ export default {
   data () {
     return {
       factionList: ['blue', 'green', 'gold', 'red', 'unsure'],
-      yearList: ['kindy', 'pre-prim.', 'year 1', 'year 2', 'year 3', 'year 4', 'year 5', 'year 6'],
+      yearList: ['kindy', 'pre-primary', 'year 1', 'year 2', 'year 3', 'year 4', 'year 5', 'year 6'],
       form: {
         name: '',
         address: '',
@@ -119,41 +119,59 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+p {
+    @apply p-4;
+}
 .input-row {
-    @apply text-center w-full;
-  }
+    @apply text-center w-full md:w-2/5 md:mx-auto flex flex-row justify-between;
+}
 .tick-row {
-    @apply text-center w-full;
-  }
+    @apply text-center w-full md:w-2/5 md:mx-auto flex flex-row justify-between;
+}
+.full-row {
+    @apply text-left w-full md:w-2/5 md:mx-auto flex flex-row flex-wrap justify-between;
+}
+.year-checkboxes,
+.full-row label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /* submit/reset row */
 .input-row:last-of-type {
   @apply ml-auto mr-4 text-right;
 }
+.input-row input.button {
+    @apply p-4 py-2 w-32 mx-0 cursor-pointer;
+}
+.input-row input.button:first-of-type {
+    @apply bg-yellow-500;
+}
+
+/* left side labels and checkboxes */
 .tick-row input,
 .input-row label {
-  @apply w-16 inline-block my-6 text-right align-top;
+  @apply w-16 inline-block my-6 text-right align-top flex-none;
 }
+/* right side inputs and descriptions */
 .input-row input,
 .input-row textarea,
 .input-row select {
-  @apply border border-gray-400 my-4 inline-block w-64;
+  @apply w-auto border border-gray-400 my-4 inline-block ;
+}
+/* set to same size as the default input boxes */
+.input-row input,
+.input-row select {
+    /* width: 252px; */
+    @apply  flex-auto ml-4;
 }
 .input-row input,
 .input-row select {
   @apply p-4 py-2 ;
 }
 .tick-row label {
-    @apply w-64 inline-block text-left pb-4;
-}
-/* .tick-row input {
-  @apply w-12 my-4 align-top;
-} */
-.input-row input.button {
-    @apply p-4 py-2 w-32 mx-0 cursor-pointer;
-}
-.input-row input.button:first-of-type {
-    @apply bg-yellow-500;
+  @apply inline-block text-left pb-4;
 }
 
 </style>
