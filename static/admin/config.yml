@@ -76,7 +76,21 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "event" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime", required: false }
+      - {
+          label: "Show Date",
+          name: "showDate",
+          widget: "boolean",
+          required: true,
+          default: true
+        }
       - { label: "When", name: "when", widget: "string", required: false }
+      - {
+          label: "Show When",
+          name: "showWhen",
+          widget: "boolean",
+          required: true,
+          default: false
+        }
       - {
           label: "Where",
           name: "location",
