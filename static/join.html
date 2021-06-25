@@ -9,102 +9,90 @@
         class="flex flex-col flex-initial text-center mx-auto w-max-96"
         name="join"
         action="/thanks"
-        method="post"
-        data-netlify="true"
+        method="POST"
+        netlify
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="join">
-        <div class="input-row">
           <label for="name">Name: </label>
           <input id="name" name="name" v-model="form.name" type="text" required>
-        </div>
-        <div class="input-row">
           <label for="address">Address: </label>
           <input id="address" name="address" v-model="form.address" type="text" required>
-        </div>
-        <div class="input-row">
           <label for="phone">Phone: </label>
           <input id="phone" name="phone" v-model="form.phone" type="tel" required>
-        </div>
-        <div class="input-row">
           <label for="mobile">Mobile: </label>
           <input id="mobile" name="mobile" v-model="form.mobile" type="tel" required>
-        </div>
-        <div class="input-row">
           <label for="email">Email: </label>
           <input id="email" name="email" v-model="form.email" type="email" required>
-        </div>
-        <div class="input-row">
           <label for="faction">Faction: </label>
           <select id="faction" name="faction" v-model="form.faction" required>
             <option v-for="faction in factionList" :key="faction" :value="faction" class="capitalize">
               {{ faction }}
             </option>
           </select>
-        </div>
-            <input
-                :id="years-kindy"
-                type="checkbox"
-                :name="years-kindy"
-            >
-            <label :for="years-kindy">Kindy</label>
-            <input
-                :id="years-pre-primary"
-                type="checkbox"
-                :name="years-pre-primary"
-            >
-            <label :for="years-pre-primary">Pre-primary</label>
-            <input
-                :id="years-1"
-                type="checkbox"
-                :name="years-1"
-            >
-            <label :for="years-1">Year 1</label>
-            <input
-                :id="years-2"
-                type="checkbox"
-                :name="years-2"
-            >
-            <label :for="years-2">Year 2</label>
-            <input
-                :id="years-3"
-                type="checkbox"
-                :name="years-3"
-            >
-            <label :for="years-3">Year 3</label>
-            <input
-                :id="years-4"
-                type="checkbox"
-                :name="years-4"
-            >
-            <label :for="years-4">Year 4</label>
-            <input
-                :id="years-5"
-                type="checkbox"
-                :name="years-5"
-            >
-            <label :for="years-5">Year 5</label>
-            <input
-                :id="years-6"
-                type="checkbox"
-                :name="years-6"
-            >
-            <label :for="years-6">Year 6</label>
-          <input
+        <input
+            :id="years-kindy"
+            type="checkbox"
+            :name="years-kindy"
+        >
+        <label :for="years-kindy">Kindy</label>
+        <input
+            :id="years-pre-primary"
+            type="checkbox"
+            :name="years-pre-primary"
+        >
+        <label :for="years-pre-primary">Pre-primary</label>
+        <input
+            :id="years-1"
+            type="checkbox"
+            :name="years-1"
+        >
+        <label :for="years-1">Year 1</label>
+        <input
+            :id="years-2"
+            type="checkbox"
+            :name="years-2"
+        >
+        <label :for="years-2">Year 2</label>
+        <input
+            :id="years-3"
+            type="checkbox"
+            :name="years-3"
+        >
+        <label :for="years-3">Year 3</label>
+        <input
+            :id="years-4"
+            type="checkbox"
+            :name="years-4"
+        >
+        <label :for="years-4">Year 4</label>
+        <input
+            :id="years-5"
+            type="checkbox"
+            :name="years-5"
+        >
+        <label :for="years-5">Year 5</label>
+        <input
+            :id="years-6"
+            type="checkbox"
+            :name="years-6"
+        >
+        <label :for="years-6">Year 6</label>
+        <input
             id="understandMembershipLength"
             type="checkbox"
             name="understandMembershipLength"
             required
-          >
-          <label for="understandMembershipLength">I understand that my membership is current until the next AGM and that by joining the P&C I
-            agree to abide by the Rules of the Association (available from the P&C website).</label>
-          <input
-            id="understandEmail"
-            type="checkbox"
-            name="understandEmail"
-            required
-          >
-          <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
+        >
+        <label for="understandMembershipLength">I understand that my membership is current until the next AGM and that by joining the P&C I
+        agree to abide by the Rules of the Association (available from the P&C website).</label>
+        <input
+        id="understandEmail"
+        type="checkbox"
+        name="understandEmail"
+        required
+        >
+        <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
         <div class="input-row flex flex-row justify-between">
           <input type="submit" class="button">
           <input type="reset" class="button">

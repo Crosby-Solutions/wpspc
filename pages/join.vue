@@ -15,34 +15,35 @@
         class="flex flex-col flex-initial text-center mx-auto w-max-96"
         name="join"
         action="/thanks"
-        method="post"
+        method="POST"
         data-netlify="true"
-        netlify-honeypot="bot-field"
+        data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit"
       >
         <input type="hidden" name="form-name" value="join">
         <div class="input-row">
           <label for="name">Name: </label>
-          <input id="name" v-model="form.name" type="text" required>
+          <input id="name" v-model="form.name" name="name" type="text" required>
         </div>
         <div class="input-row">
           <label for="address">Address: </label>
-          <input id="address" v-model="form.address" type="text" required>
+          <input id="address" v-model="form.address" name="address" type="text" required>
         </div>
         <div class="input-row">
           <label for="phone">Phone: </label>
-          <input id="phone" v-model="form.phone" type="tel" required>
+          <input id="phone" v-model="form.phone" name="phone" type="tel" required>
         </div>
         <div class="input-row">
           <label for="mobile">Mobile: </label>
-          <input id="mobile" v-model="form.mobile" type="tel" required>
+          <input id="mobile" v-model="form.mobile" name="mobile" type="tel" required>
         </div>
         <div class="input-row">
           <label for="email">Email: </label>
-          <input id="email" v-model="form.email" type="email" required>
+          <input id="email" v-model="form.email" name="email" type="email" required>
         </div>
         <div class="input-row">
           <label for="faction">Faction: </label>
-          <select id="faction" v-model="form.faction" required>
+          <select id="faction" v-model="form.faction" name="faction" required class="capitalize">
             <option v-for="faction in factionList" :key="faction" :value="faction" class="capitalize">
               {{ faction }}
             </option>
@@ -53,14 +54,15 @@
         </p>
         <div class="full-row">
           <div v-for="year in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
-            <input
-              :id="'years-'+year"
-              class="year-check"
-              type="checkbox"
-              :value="form.years"
-              :name="'years-'+year"
-            >
-            <label :for="year" class="year-label text-sm capitalize">{{ year }}</label>
+            <label :for="year" class="year-label text-sm capitalize">
+              <input
+                :id="'years-'+year"
+                class="year-check"
+                type="checkbox"
+                :value="form.years"
+                :name="'years-'+year"
+              >
+              {{ year }}</label>
           </div>
         </div>
         <hr width="40%" class="my-2 mx-auto">
@@ -86,7 +88,7 @@
           <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
         </div>
         <div class="input-row">
-          <input type="submit" class="button">
+          <input type="submit" class="button" @click.prevent="handleSubmit">
           <input type="reset" class="button">
         </div>
       </form>
@@ -113,6 +115,23 @@ export default {
         understandEmailUse: false,
         talents: []
       }
+    }
+  },
+  methods: {
+    encode (data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&')
+    },
+    handleSubmit () {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': 'join',
+          ...this.form
+        })
+      }).then(() => this.$router.push('thanks')).catch(error => alert(error))
     }
   }
 

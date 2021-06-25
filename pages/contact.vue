@@ -11,33 +11,39 @@
           class="flex flex-col flex-initial"
           name="contact"
           action="/thanks"
-          method="post"
+          method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
         >
+          <!-- @submit.prevent="handleSubmit" -->
           <input type="hidden" name="form-name" value="contact">
           <div class="input-row">
-            <label for="name">Name: </label>
-            <input
-              id="name"
-              v-model="form.name"
-              type="text"
-            >
+            <label for="name">Name:
+              <input
+                id="name"
+                v-model="form.name"
+                type="text"
+                name="name"
+              >
+            </label>
           </div>
           <div class="input-row">
-            <label for="email">Email: </label>
-            <input id="email" v-model="form.email" type="email">
+            <label for="email">Email:
+              <input id="email" v-model="form.email" type="email" name="email">
+            </label>
           </div>
           <div class="input-row">
-            <label for="phone">Phone: </label>
-            <input id="phone" v-model="form.phone" type="tel">
+            <label for="phone">Phone:
+              <input id="phone" v-model="form.phone" type="tel" name="phone">
+            </label>
           </div>
           <div class="input-row">
-            <label for="message">Enquiry:</label>
-            <textarea id="message" v-model="form.message" :rows="5" />
+            <label for="message">Enquiry:
+              <textarea id="message" v-model="form.message" :rows="5" name="message" class="p-4" />
+            </label>
           </div>
           <div class="input-row flex flex-row justify-between">
-            <input type="submit" class="button">
+            <input type="submit" class="button" @click.prevent="handleSubmit">
             <input type="reset" class="button">
           </div>
         </form>
@@ -72,6 +78,34 @@ export default {
         phone: '',
         message: ''
       }
+    }
+  },
+  methods: {
+    encode (data) {
+      return Object.keys(data)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join('&')
+    },
+    handleSubmit () {
+      // const axiosConfig = {
+      //   header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      // }
+      // axios.post(
+      //   '/',
+      //   this.encode({
+      //     'form-name': 'contact',
+      //     ...this.form
+      //   }),
+      //   axiosConfig
+      // )
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': 'contact',
+          ...this.form
+        })
+      }).then(() => this.$router.push('/thanks')).catch(error => alert(error))
     }
   }
 
