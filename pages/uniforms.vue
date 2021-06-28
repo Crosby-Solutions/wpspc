@@ -1,8 +1,8 @@
 <template>
-  <div class="container overflow-y-auto">
+  <div class="page overflow-y-auto">
     <div class="w-full text-left">
       <h1 class="text-2xl capitalize">
-        {{ category }}
+        Uniforms
       </h1>
       <div v-if="articles.length">
         <ul class="flex flex-row flex-wrap w-full">
@@ -29,7 +29,9 @@
 export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles').where({ category: 'uniforms' }).sortBy('order', 'asc').fetch()
+    console.log('articles: ', articles)
     const uniforms = await $content('uniform').only(['title', 'thumbnail']).fetch()
+    console.log('uniforms: ', uniforms)
     return {
       uniforms,
       articles

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
     <h1 class="text-left mr-auto">
       Contact WPS P&C
     </h1>

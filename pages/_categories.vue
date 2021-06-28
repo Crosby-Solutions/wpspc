@@ -1,5 +1,5 @@
 <template>
-  <div class="container overflow-y-auto">
+  <div class="page overflow-y-auto">
     <div class="w-full text-left">
       <h1 class="text-2xl capitalize">
         {{ category }}

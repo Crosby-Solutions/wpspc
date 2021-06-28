@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen flex flex-col relative">
+  <div class="fullscreen container mx-auto flex flex-col relative">
     <Facebook />
     <Navbar class="flex-initial" />
     <Nuxt class="flex-auto" />
@@ -50,8 +50,9 @@ html {
   overflow: hidden;
   box-sizing: border-box;
 }
-.container {
+.page {
   margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -1,5 +1,5 @@
 <template>
-  <div class="nav flex flex-col justify-between w-full bg-gray-200">
+  <div class="nav container mx-auto flex flex-col justify-between w-full bg-gray-200">
     <nuxt-link class="home" to="/">
       <title class="nav-title hidden lg:block text-xl p-4">
         Willetton Primary School Parents and Citizens Association

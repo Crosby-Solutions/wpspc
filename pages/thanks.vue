@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-left mx-auto">
+  <div class="page text-left mx-auto">
     <h1>Thanks!</h1>
     <p>Thank-you for your submission. Someone from the P&C will be in contact shortly.</p>
     <nuxt-link to="/">

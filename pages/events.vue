@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="page">
     <div class="events text-left w-full">
-      <h1 class="">
+      <h1 class="text-2xl">
         Events
       </h1>
-      <div class="">
-        <div v-for="term in termsWithEvents" :key="'term-'+term" class="terms">
+      <div class="flex flex-row flex-wrap w-full">
+        <div v-for="term in termsWithEvents" :key="'term-'+term" class="terms w-full md:w-1/4">
           <h2>
             Term {{ term }}
           </h2>
@@ -71,7 +71,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-y-auto overflow-x-hidden">
-    <div class="container relative">
+    <div class="page relative">
       <div class="hero-img -mt-4 h-48 relative">
         <h1 class="title absolute bottom-4 left-1/2">
           WPS P&C

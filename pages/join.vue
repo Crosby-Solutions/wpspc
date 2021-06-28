@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="page">
     <div class="text-left">
       <h1 class="text-3xl">
         Join the P&C
@@ -9,6 +9,9 @@
         happening and gives you a voice. It also allows you to vote on decisions at P&C meetings. If you can’t make
         it to meetings, we’ll keep you in touch via emails of meeting agendas and the meeting minutes (what
         happened at the meetings). But if you do make it to the meeting your family’s faction gets a faction point!
+      </p>
+      <p class="required">
+        indicates required inputs.
       </p>
       <form
         id="join"
@@ -22,27 +25,27 @@
         <!-- @submit.prevent="handleSubmit" -->
         <input type="hidden" name="form-name" value="join">
         <div class="input-row">
-          <label for="name">Name: </label>
+          <label for="name" class="required">Name: </label>
           <input id="name" v-model="form.name" name="name" type="text" required>
         </div>
         <div class="input-row">
-          <label for="address">Address: </label>
+          <label for="address" class="required">Address: </label>
           <input id="address" v-model="form.address" name="address" type="text" required>
         </div>
         <div class="input-row">
-          <label for="phone">Phone: </label>
+          <label for="phone" class="required">Phone: </label>
           <input id="phone" v-model="form.phone" name="phone" type="tel" required>
         </div>
         <div class="input-row">
-          <label for="mobile">Mobile: </label>
+          <label for="mobile" class="required">Mobile: </label>
           <input id="mobile" v-model="form.mobile" name="mobile" type="tel" required>
         </div>
         <div class="input-row">
-          <label for="email">Email: </label>
+          <label for="email" class="required">Email: </label>
           <input id="email" v-model="form.email" name="email" type="email" required>
         </div>
         <div class="input-row">
-          <label for="faction">Faction: </label>
+          <label for="faction" class="required">Faction: </label>
           <select id="faction" v-model="form.faction" name="faction" required class="capitalize">
             <option v-for="faction in factionList" :key="faction" :value="faction" class="capitalize">
               {{ faction }}
@@ -65,6 +68,28 @@
               {{ year }}</label>
           </div>
         </div>
+        <p class="full-row">
+          We’re sure you have a talent, an idea, a passion, or even a little time that could help us and the school grow
+          into an even better place for our kids. We’d love it if you could let us know which of the following you could help
+          us out with in the coming year sometime:
+        </p>
+        <div class="full-col max-h-56">
+          <div v-for="help in helpList" :key="help" :value="help" class="help-checkboxes w-1/2 text-left">
+            <input
+              :id="'help-'+help"
+              v-model="form.help[i]"
+              class="help-check"
+              type="checkbox"
+              :name="'help-'+year"
+            >
+            <label :for="'help-'+help" class="help-label text-sm capitalize">
+              {{ help }}</label>
+          </div>
+        </div>
+        <div class="input-row">
+          <label for="helpOther">Other: </label>
+          <input id="helpOther" v-model="form.helpOther" name="helpOther" type="text" required>
+        </div>
         <hr width="40%" class="my-2 mx-auto">
         <div class="tick-row">
           <input
@@ -74,7 +99,7 @@
             name="understandMembershipLength"
             required
           >
-          <label for="understandMembershipLength">I understand that my membership is current until the next AGM and that by joining the P&C I
+          <label for="understandMembershipLength" class="required">I understand that my membership is current until the next AGM and that by joining the P&C I
             agree to abide by the Rules of the Association (available from the P&C website).</label>
         </div>
         <div class="tick-row">
@@ -85,7 +110,7 @@
             name="understandEmail"
             required
           >
-          <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
+          <label for="understandEmail" class="required">I understand that notice of meetings and minutes will be sent to my email address.</label>
         </div>
         <div class="input-row">
           <input type="submit" class="button">
@@ -103,6 +128,24 @@ export default {
     return {
       factionList: ['blue', 'green', 'gold', 'red', 'unsure'],
       yearList: ['kindy', 'pre-primary', 'year 1', 'year 2', 'year 3', 'year 4', 'year 5', 'year 6'],
+      helpList: [
+        'Bake a cake',
+        'Be a class rep',
+        'Book keeping/Accounting',
+        'Donate products/services',
+        'Event Planning',
+        'Gardening/Busy Bee',
+        'Help arrange food at a "Thank you" teachers morning tea',
+        'Help at a school disco',
+        'Help out with the special lunch orders (a couple of times a term)',
+        'Help with a social event',
+        'Help with School Banking',
+        'Join an event organisation team',
+        'Staff a cake or other stall at an event',
+        'Turn sausages at a sausage sizzle',
+        'Web / Graphic Design',
+        'Other, please specify...'
+      ],
       form: {
         name: '',
         address: '',
@@ -111,6 +154,8 @@ export default {
         email: '',
         data: '',
         faction: '',
+        help: [],
+        helpOther: '',
         years: [],
         understandMembershipLength: false,
         understandEmailUse: false,
@@ -118,24 +163,6 @@ export default {
       }
     }
   }
-  // methods: {
-  //   encode (data) {
-  //     return Object.keys(data)
-  //       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-  //       .join('&')
-  //   },
-  //   handleSubmit () {
-  //     fetch('/', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //       body: this.encode({
-  //         'form-name': 'join',
-  //         ...this.form
-  //       })
-  //     }).then(() => this.$router.push('thanks')).catch(error => alert(error))
-  //   }
-  // }
-
 }
 </script>
 
@@ -152,39 +179,48 @@ p {
 .full-row {
     @apply text-left w-full md:w-2/5 md:mx-auto flex flex-row flex-wrap justify-between;
 }
+.full-col {
+    @apply text-left w-full md:w-2/5 md:mx-auto flex flex-col flex-wrap justify-between;
+}
 .year-checkboxes,
 .full-row label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.year-check {
+  @apply ml-1;
+}
+.help-checkboxes {
+  display: block;
+}
 /* submit/reset row */
 .input-row:last-of-type {
   @apply ml-auto mr-4 text-right;
 }
 .input-row input.button {
-    @apply p-4 py-2 w-32 mx-0 cursor-pointer;
+  @apply p-4 py-2 w-32 mx-0 cursor-pointer;
 }
 .input-row input.button:first-of-type {
-    @apply bg-yellow-500;
+  @apply bg-yellow-500;
 }
 
 /* left side labels and checkboxes */
 .tick-row input,
 .input-row label {
-  @apply w-16 inline-block my-6 text-right align-top flex-none;
+  @apply w-20 inline-block my-6 text-right align-top flex-none;
 }
 /* right side inputs and descriptions */
 .input-row input,
 .input-row textarea,
 .input-row select {
-  @apply w-auto border border-gray-400 my-4 inline-block ;
+  @apply w-auto border border-gray-400 my-4 inline-block;
 }
 /* set to same size as the default input boxes */
 .input-row input,
 .input-row select {
     /* width: 252px; */
-    @apply  flex-auto ml-4;
+  @apply flex-auto ml-4;
 }
 .input-row input,
 .input-row select {
@@ -192,6 +228,10 @@ p {
 }
 .tick-row label {
   @apply inline-block text-left pb-4;
+}
+.required::before {
+  content: "* ";
+  color: red;
 }
 
 </style>
