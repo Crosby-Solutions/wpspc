@@ -52,6 +52,12 @@ export default {
       link: '',
       order: -999
     }
+    const uniforms = {
+      layout: 'page',
+      title: 'Uniforms',
+      link: 'uniforms',
+      order: 997
+    }
     const contact = {
       layout: 'page',
       title: 'Contact',
@@ -66,7 +72,7 @@ export default {
     }
     this.$content('categories').sortBy('order', 'asc').fetch()
       .then((res) => {
-        this.categories = [home, ...res, contact, join]
+        this.categories = [home, ...res, uniforms, contact, join]
       })
   },
   methods: {

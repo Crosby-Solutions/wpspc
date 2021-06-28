@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  async asyncData ({ $content, params }) {
+  async asyncData ({ $content }) {
     const articles = await $content('articles').where({ category: 'uniforms' }).sortBy('order', 'asc').fetch()
     console.log('articles: ', articles)
     const uniforms = await $content('uniform').only(['title', 'thumbnail']).fetch()
@@ -35,11 +35,6 @@ export default {
     return {
       uniforms,
       articles
-    }
-  },
-  data () {
-    return {
-      category: this.$route.params.categories
     }
   }
 }
