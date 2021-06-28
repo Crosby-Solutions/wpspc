@@ -77,7 +77,6 @@ export default {
   },
   methods: {
     checkScrollLocation (e) {
-      // console.log('e: ', e)
       const buffer = 25
       this.leftScrollActive = e.target.scrollLeft > buffer
       this.rightScrollActive = e.target.scrollLeft + buffer < (e.target.scrollWidth - e.target.offsetWidth)

@@ -80,7 +80,7 @@
               v-model="form.help[i]"
               class="help-check mr-4"
               type="checkbox"
-              :name="'help-'+year"
+              :name="'help-'+help"
             >
             <label :for="'help-'+help" class="help-label text-sm capitalize">
               {{ help }}</label>
