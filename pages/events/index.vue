@@ -10,7 +10,7 @@
             Term {{ term }}
           </h2>
           <ul>
-            <nuxt-link v-for="(event, i) in events.filter(e => e.term === term)" :key="'event-'+i" :to="event.path">
+            <Nuxt-Link v-for="(event, i) in events.filter(e => e.term === term)" :key="'event-'+i" :to="event.path">
               <li>
                 <h3>
                   {{ event.title }}
@@ -21,7 +21,7 @@
                 <Nuxt-Content :document="event" />
                 <br>
               </li>
-            </nuxt-link>
+            </Nuxt-Link>
           </ul>
         </div>
       </div>

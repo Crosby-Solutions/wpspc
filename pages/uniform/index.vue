@@ -12,14 +12,14 @@
         </ul>
       </div>
       <ul v-if="uniforms.length" class="flex flex-row flex-wrap w-full justify-around md:justify-between">
-        <Nuxt-Link v-for="(uniform, i) in uniforms" :key="'uni' + i" :to="uniform.path">
-          <li class="border-2 border-yellow-700 p-4 text-center m-4">
+        <li v-for="(uniform, i) in uniforms" :key="'uni' + i" class="border-2 border-yellow-700 p-4 text-center m-4">
+          <Nuxt-Link :to="uniform.path">
             <img :src="uniform.thumbnail" height="200" width="200" class="m-auto">
             <p>
               {{ uniform.title }}
             </p>
-          </li>
-        </Nuxt-Link>
+          </Nuxt-Link>
+        </li>
       </ul>
     </div>
   </div>
@@ -28,8 +28,13 @@
 <script>
 export default {
   async asyncData ({ $content }) {
-    const articles = await $content('articles').where({ category: 'uniforms' }).sortBy('order', 'asc').fetch()
-    const uniforms = await $content('uniform').only(['title', 'thumbnail']).fetch()
+    const articles = await $content('articles')
+      .where({ category: 'uniforms' })
+      .sortBy('order', 'asc')
+      .fetch()
+    const uniforms = await $content('uniform')
+      .only(['title', 'thumbnail'])
+      .fetch()
     return {
       uniforms,
       articles
