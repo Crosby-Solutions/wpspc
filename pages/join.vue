@@ -53,13 +53,13 @@
           My child/ren is/are in Year(s):
         </p>
         <div class="full-row">
-          <div v-for="year in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
+          <div v-for="(year, i) in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
             <label :for="year" class="year-label text-sm capitalize">
               <input
                 :id="'years-'+year"
+                v-model="form.years[i]"
                 class="year-check"
                 type="checkbox"
-                :value="form.years"
                 :name="'years-'+year"
               >
               {{ year }}</label>
