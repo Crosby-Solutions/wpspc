@@ -1,6 +1,6 @@
 ---
 layout: uniform
-title: Uniforms
-link: uniforms
+title: Uniform
+link: uniform
 order: 0
 ---

@@ -9,18 +9,9 @@
   {
     "name": "events",
     "path": "/events",
-    "component": "/home/jcrosby/projects/wpspc/pages/events.vue",
-    "chunkName": "pages/events",
-    "children": [
-      {
-        "name": "events-slug",
-        "path": ":slug?",
-        "component": "/home/jcrosby/projects/wpspc/pages/events/_slug.vue",
-        "chunkName": "pages/events/_slug",
-        "_name": "_744172fc"
-      }
-    ],
-    "_name": "_d3559afe"
+    "component": "/home/jcrosby/projects/wpspc/pages/events/index.vue",
+    "chunkName": "pages/events/index",
+    "_name": "_75f81444"
   },
   {
     "name": "join",
@@ -37,11 +28,11 @@
     "_name": "_1c047031"
   },
   {
-    "name": "uniforms",
-    "path": "/uniforms",
-    "component": "/home/jcrosby/projects/wpspc/pages/uniforms.vue",
-    "chunkName": "pages/uniforms",
-    "_name": "_f096d0b2"
+    "name": "uniform",
+    "path": "/uniform",
+    "component": "/home/jcrosby/projects/wpspc/pages/uniform/index.vue",
+    "chunkName": "pages/uniform/index",
+    "_name": "_7e2d027f"
   },
   {
     "name": "articles-slug",
@@ -51,8 +42,15 @@
     "_name": "_e5fc99c0"
   },
   {
+    "name": "events-slug",
+    "path": "/events/:slug",
+    "component": "/home/jcrosby/projects/wpspc/pages/events/_slug.vue",
+    "chunkName": "pages/events/_slug",
+    "_name": "_744172fc"
+  },
+  {
     "name": "uniform-slug",
-    "path": "/uniform/:slug?",
+    "path": "/uniform/:slug",
     "component": "/home/jcrosby/projects/wpspc/pages/uniform/_slug.vue",
     "chunkName": "pages/uniform/_slug",
     "_name": "_7c766137"

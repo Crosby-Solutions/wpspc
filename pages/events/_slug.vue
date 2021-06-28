@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div class="page">
+    <h1>{{ event.title }}</h1>
     <div class="events">
       {{ event }}
     </div>

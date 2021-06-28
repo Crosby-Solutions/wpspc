@@ -1,5 +1,5 @@
 <template>
-  <div class="container m-auto">
+  <div class="page m-auto">
     <div class="content w-full text-left overflow-y-auto">
       <h2 class="text-2xl p-8">
         {{ uniform.title }}
