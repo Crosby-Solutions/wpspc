@@ -54,14 +54,14 @@
         </p>
         <div class="full-row">
           <div v-for="(year, i) in yearList" :key="year" class="year-checkboxes w-1/4 text-left">
-            <label :for="year" class="year-label text-sm capitalize">
-              <input
-                :id="'years-'+year"
-                v-model="form.years[i]"
-                class="year-check"
-                type="checkbox"
-                :name="'years-'+year"
-              >
+            <input
+              :id="'years-'+year"
+              v-model="form.years[i]"
+              class="year-check"
+              type="checkbox"
+              :name="'years-'+year"
+            >
+            <label :for="'years-'+year" class="year-label text-sm capitalize">
               {{ year }}</label>
           </div>
         </div>
