@@ -43,7 +43,8 @@
             </label>
           </div>
           <div class="input-row flex flex-row justify-between">
-            <input type="submit" class="button" @click.prevent="handleSubmit">
+            <input type="submit" class="button">
+            <!-- @click.prevent="handleSubmit" -->
             <input type="reset" class="button">
           </div>
         </form>
@@ -79,35 +80,24 @@ export default {
         message: ''
       }
     }
-  },
-  methods: {
-    encode (data) {
-      return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&')
-    },
-    handleSubmit () {
-      // const axiosConfig = {
-      //   header: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      // }
-      // axios.post(
-      //   '/',
-      //   this.encode({
-      //     'form-name': 'contact',
-      //     ...this.form
-      //   }),
-      //   axiosConfig
-      // )
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({
-          'form-name': 'contact',
-          ...this.form
-        })
-      }).then(() => this.$router.push('/thanks')).catch(error => alert(error))
-    }
   }
+  // methods: {
+  //   encode (data) {
+  //     return Object.keys(data)
+  //       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+  //       .join('&')
+  //   },
+  //   handleSubmit () {
+  //     fetch('/', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //       body: this.encode({
+  //         'form-name': 'contact',
+  //         ...this.form
+  //       })
+  //     }).then(() => this.$router.push('/thanks')).catch(error => alert(error))
+  //   }
+  // }
 
 }
 </script>

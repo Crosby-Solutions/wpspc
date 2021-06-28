@@ -18,8 +18,8 @@
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        @submit.prevent="handleSubmit"
       >
+        <!-- @submit.prevent="handleSubmit" -->
         <input type="hidden" name="form-name" value="join">
         <div class="input-row">
           <label for="name">Name: </label>
@@ -88,7 +88,8 @@
           <label for="understandEmail">I understand that notice of meetings and minutes will be sent to my email address.</label>
         </div>
         <div class="input-row">
-          <input type="submit" class="button" @click.prevent="handleSubmit">
+          <input type="submit" class="button">
+          <!-- @click.prevent="handleSubmit" -->
           <input type="reset" class="button">
         </div>
       </form>
@@ -116,24 +117,24 @@ export default {
         talents: []
       }
     }
-  },
-  methods: {
-    encode (data) {
-      return Object.keys(data)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-        .join('&')
-    },
-    handleSubmit () {
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({
-          'form-name': 'join',
-          ...this.form
-        })
-      }).then(() => this.$router.push('thanks')).catch(error => alert(error))
-    }
   }
+  // methods: {
+  //   encode (data) {
+  //     return Object.keys(data)
+  //       .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+  //       .join('&')
+  //   },
+  //   handleSubmit () {
+  //     fetch('/', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //       body: this.encode({
+  //         'form-name': 'join',
+  //         ...this.form
+  //       })
+  //     }).then(() => this.$router.push('thanks')).catch(error => alert(error))
+  //   }
+  // }
 
 }
 </script>
