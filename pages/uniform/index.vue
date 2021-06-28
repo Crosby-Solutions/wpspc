@@ -33,7 +33,6 @@ export default {
       .sortBy('order', 'asc')
       .fetch()
     const uniforms = await $content('uniform')
-      .only(['title', 'thumbnail'])
       .fetch()
     return {
       uniforms,
