@@ -73,12 +73,12 @@
           into an even better place for our kids. We’d love it if you could let us know which of the following you could help
           us out with in the coming year sometime:
         </p>
-        <div class="full-col max-h-56">
-          <div v-for="help in helpList" :key="help" :value="help" class="help-checkboxes w-1/2 text-left">
+        <div class="full-row">
+          <div v-for="(help, i) in helpList" :key="help" :value="help" class="help-checkboxes w-full ml-12 md:w-1/2 md:ml-0 text-left">
             <input
               :id="'help-'+help"
               v-model="form.help[i]"
-              class="help-check"
+              class="help-check mr-4"
               type="checkbox"
               :name="'help-'+year"
             >
@@ -135,13 +135,13 @@ export default {
         'Donate products/services',
         'Event Planning',
         'Gardening/Busy Bee',
-        'Help arrange food at a "Thank you" teachers morning tea',
         'Help at a school disco',
-        'Help out with the special lunch orders (a couple of times a term)',
+        'Help arrange food at a morning tea',
         'Help with a social event',
+        'Help out with special lunch orders',
         'Help with School Banking',
         'Join an event organisation team',
-        'Staff a cake or other stall at an event',
+        'Staff a cake stall at an event',
         'Turn sausages at a sausage sizzle',
         'Web / Graphic Design',
         'Other, please specify...'
@@ -192,7 +192,7 @@ p {
   @apply ml-1;
 }
 .help-checkboxes {
-  display: block;
+  @apply block mr-4;
 }
 /* submit/reset row */
 .input-row:last-of-type {
