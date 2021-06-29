@@ -21,6 +21,13 @@
     "_name": "_544d5212"
   },
   {
+    "name": "payment",
+    "path": "/payment",
+    "component": "/home/jcrosby/projects/wpspc/pages/payment.vue",
+    "chunkName": "pages/payment",
+    "_name": "_c16bef64"
+  },
+  {
     "name": "thanks",
     "path": "/thanks",
     "component": "/home/jcrosby/projects/wpspc/pages/thanks.vue",

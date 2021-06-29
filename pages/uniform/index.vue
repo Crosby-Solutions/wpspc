@@ -11,6 +11,7 @@
           </li>
         </ul>
       </div>
+      <p>A summary of available uniform is presented below. Please click to see current size availability.</p>
       <ul v-if="uniforms.length" class="flex flex-row flex-wrap w-full justify-around md:justify-between">
         <li v-for="(uniform, i) in uniforms" :key="'uni' + i" class="border-2 border-yellow-700 p-4 text-center m-4">
           <Nuxt-Link :to="uniform.path">
