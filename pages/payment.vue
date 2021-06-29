@@ -4,7 +4,7 @@
     <card
       class="stripe-card"
       :class="{ complete }"
-      stripe="pk_test_51J7VkUDhp3PAG4PDeo8YJdU09X6TAjKs94kuKM8AZpwhW1WMdu0vzysnEuYq5kJj4zftJDxdFBy57sbg0oh3oggV00L1WUZjtS"
+      :stripe="stripeKey"
       :options="stripeOptions"
       @change="complete = $event.complete"
     />
@@ -39,7 +39,7 @@
 
 <script>
 import { Card, createToken } from 'vue-stripe-elements-plus'
-import { stripeKey, stripeOptions } from './stripeConfig.json'
+import { stripeKey, stripeOptions } from './stripeConfig.js'
 
 export default {
   components: { Card },
@@ -47,9 +47,10 @@ export default {
     return {
       complete: false,
       stripeEmail: '',
-      stripeOptions: {
-        // see https://stripe.com/docs/stripe.js#element-options for details
-      }
+      // see https://stripe.com/docs/stripe.js#element-options for details
+      stripeOptions,
+      stripeKey
+
     }
   },
 
