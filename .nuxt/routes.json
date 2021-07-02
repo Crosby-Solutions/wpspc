@@ -1,5 +1,12 @@
 [
   {
+    "name": "cancel",
+    "path": "/cancel",
+    "component": "/home/jcrosby/projects/wpspc/pages/cancel.vue",
+    "chunkName": "pages/cancel",
+    "_name": "_69a0313c"
+  },
+  {
     "name": "contact",
     "path": "/contact",
     "component": "/home/jcrosby/projects/wpspc/pages/contact.vue",
@@ -26,6 +33,13 @@
     "component": "/home/jcrosby/projects/wpspc/pages/payment.vue",
     "chunkName": "pages/payment",
     "_name": "_c16bef64"
+  },
+  {
+    "name": "success",
+    "path": "/success",
+    "component": "/home/jcrosby/projects/wpspc/pages/success.vue",
+    "chunkName": "pages/success",
+    "_name": "_a0fc606a"
   },
   {
     "name": "thanks",

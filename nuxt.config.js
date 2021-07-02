@@ -43,6 +43,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content'
+    // https://www.npmjs.com/package/nuxt-stripe-module
+    // 'nuxt-stripe-module'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -50,7 +52,10 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
-
+  // Nuxt Stripe https://www.npmjs.com/package/nuxt-stripe-module
+  // stripe: {
+  //   publishableKey: 'pk_test_51J7VkUDhp3PAG4PDeo8YJdU09X6TAjKs94kuKM8AZpwhW1WMdu0vzysnEuYq5kJj4zftJDxdFBy57sbg0oh3oggV00L1WUZjtS',
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
 }

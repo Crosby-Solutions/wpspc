@@ -16,8 +16,8 @@
     "core-js": "^3.9.1",
     "dotenv": "^10.0.0",
     "nuxt": "^2.15.7",
-    "uuid": "^8.3.2",
-    "vue-stripe-elements-plus": "^1.0.1"
+    "nuxt-stripe-module": "^3.2.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.5",
